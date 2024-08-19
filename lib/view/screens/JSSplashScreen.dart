@@ -38,11 +38,11 @@ class _JSSplashScreenState extends State<JSSplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(js_SplashImage,
+          Image.asset(JPImages.js_SplashImage,
               height: 130,
               fit: BoxFit.cover,
               color: appStore.isDarkModeOn ? white : JPColors.js_primaryColor),
-          Image.asset(js_loader, height: 35.0, width: 35.0),
+          Image.asset(JPImages.js_loader, height: 35.0, width: 35.0),
         ],
       ).center(),
     );

@@ -90,7 +90,7 @@ PreferredSizeWidget jsAppBar(BuildContext context,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
-                  js_SplashImage,
+                  JPImages.js_SplashImage,
                   height: 30,
                   width: 80,
                   fit: BoxFit.cover,
