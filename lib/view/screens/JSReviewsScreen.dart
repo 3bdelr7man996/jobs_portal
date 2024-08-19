@@ -41,8 +41,9 @@ class _JSReviewsScreenState extends State<JSReviewsScreen> {
           Container(
             width: context.width(),
             padding: EdgeInsets.all(16),
-            color:
-                appStore.isDarkModeOn ? scaffoldDarkColor : js_backGroundColor,
+            color: appStore.isDarkModeOn
+                ? scaffoldDarkColor
+                : JPColors.js_backGroundColor,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -66,17 +67,20 @@ class _JSReviewsScreenState extends State<JSReviewsScreen> {
                       Text("Helpfulness",
                           textAlign: TextAlign.center,
                           style: boldTextStyle(
-                              color: js_primaryColor.withOpacity(0.7))),
+                              color:
+                                  JPColors.js_primaryColor.withOpacity(0.7))),
                       Container(height: 20, width: 1, color: gray),
                       Text("Rating",
                           style: boldTextStyle(
-                              color: js_primaryColor.withOpacity(0.7))),
+                              color:
+                                  JPColors.js_primaryColor.withOpacity(0.7))),
                       Container(height: 20, width: 1, color: gray),
                       Row(
                         children: [
                           Text("Date",
                               style: boldTextStyle(
-                                  color: js_primaryColor.withOpacity(0.7))),
+                                  color: JPColors.js_primaryColor
+                                      .withOpacity(0.7))),
                           8.width,
                           Icon(Icons.download_rounded, size: 18),
                         ],
@@ -101,7 +105,7 @@ class _JSReviewsScreenState extends State<JSReviewsScreen> {
               8.height,
               Text("See all 8,456 reviews ",
                   style: primaryTextStyle(
-                      color: js_primaryColor.withOpacity(0.7))),
+                      color: JPColors.js_primaryColor.withOpacity(0.7))),
               24.height,
               Row(
                 children: [
@@ -119,7 +123,7 @@ class _JSReviewsScreenState extends State<JSReviewsScreen> {
                     itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
                     itemBuilder: (context, _) => Icon(
                       Icons.star,
-                      color: js_ratingColor,
+                      color: JPColors.js_ratingColor,
                     ),
                     onRatingUpdate: (rating) {},
                     ratingWidget: null,
@@ -160,7 +164,7 @@ class _JSReviewsScreenState extends State<JSReviewsScreen> {
                   borderRadius: BorderRadius.circular(8),
                   backgroundColor: appStore.isDarkModeOn
                       ? scaffoldDarkColor
-                      : js_ratingCardBgColor,
+                      : JPColors.js_ratingCardBgColor,
                 ),
                 padding: EdgeInsets.all(16),
                 child: Row(

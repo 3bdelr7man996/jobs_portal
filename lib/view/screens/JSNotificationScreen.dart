@@ -60,7 +60,7 @@ class _JSNotificationScreenState extends State<JSNotificationScreen> {
                   width: context.width(),
                   color: appStore.isDarkModeOn
                       ? cardDarkColor
-                      : js_backGroundColor.withOpacity(0.5),
+                      : JPColors.js_backGroundColor.withOpacity(0.5),
                   child: Text("Notifications", style: boldTextStyle(size: 28))
                       .paddingOnly(left: 16),
                 ),
@@ -98,10 +98,12 @@ class _JSNotificationScreenState extends State<JSNotificationScreen> {
                             children: [
                               Text("Find Jobs",
                                   style: boldTextStyle(
-                                      color: js_primaryColor, size: 18)),
+                                      color: JPColors.js_primaryColor,
+                                      size: 18)),
                               8.width,
                               Icon(Icons.arrow_forward,
-                                  color: js_primaryColor, size: iconSize),
+                                  color: JPColors.js_primaryColor,
+                                  size: iconSize),
                             ],
                           ),
                         )

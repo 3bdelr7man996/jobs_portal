@@ -71,8 +71,9 @@ class _JSCompanyProfileScreenState extends State<JSCompanyProfileScreen> {
             padding: EdgeInsets.all(16),
             width: context.width(),
             height: context.height(),
-            color:
-                appStore.isDarkModeOn ? scaffoldDarkColor : js_backGroundColor,
+            color: appStore.isDarkModeOn
+                ? scaffoldDarkColor
+                : JPColors.js_backGroundColor,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -166,16 +167,17 @@ class _JSCompanyProfileScreenState extends State<JSCompanyProfileScreen> {
                   children: [
                     Text(
                         "${widget.popularCompanyList!.companyRatting.validate()}",
-                        style: boldTextStyle(color: js_ratingBgColor)),
+                        style: boldTextStyle(color: JPColors.js_ratingBgColor)),
                     8.width,
-                    Icon(Icons.star, color: js_ratingBgColor, size: 16),
+                    Icon(Icons.star,
+                        color: JPColors.js_ratingBgColor, size: 16),
                     8.width,
                     Container(
                       width: context.width(),
                       height: 5,
                       decoration: boxDecorationWithRoundedCorners(
                           borderRadius: BorderRadius.circular(8),
-                          backgroundColor: js_ratingBgColor),
+                          backgroundColor: JPColors.js_ratingBgColor),
                     ).expand(),
                     8.width,
                     Text("1.7 k", style: secondaryTextStyle())

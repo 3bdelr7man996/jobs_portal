@@ -65,7 +65,7 @@ class _JSAddSkillFourScreenState extends State<JSAddSkillFourScreen> {
                       decoration: boxDecorationWithRoundedCorners(
                         backgroundColor: appStore.isDarkModeOn
                             ? scaffoldDarkColor
-                            : js_containerBgColor,
+                            : JPColors.js_containerBgColor,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
@@ -98,7 +98,7 @@ class _JSAddSkillFourScreenState extends State<JSAddSkillFourScreen> {
             right: 16,
             bottom: 8,
             child: AppButton(
-              color: js_primaryColor,
+              color: JPColors.js_primaryColor,
               width: context.width(),
               onTap: () {
                 JSCompleteProfileFiveScreen().launch(context);

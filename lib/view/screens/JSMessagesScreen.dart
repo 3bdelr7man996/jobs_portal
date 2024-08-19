@@ -114,7 +114,7 @@ class _JSMessagesScreenState extends State<JSMessagesScreen> {
                 ),
                 16.height,
                 AppButton(
-                  color: js_primaryColor,
+                  color: JPColors.js_primaryColor,
                   width: context.width(),
                   onTap: () {
                     showDialog(
@@ -148,7 +148,8 @@ class _JSMessagesScreenState extends State<JSMessagesScreen> {
                   width: context.width(),
                   child: OutlinedButton(
                     child: Text("Upload your CV",
-                            style: boldTextStyle(color: js_primaryColor))
+                            style:
+                                boldTextStyle(color: JPColors.js_primaryColor))
                         .paddingSymmetric(vertical: 12),
                     onPressed: () {
                       JSCompleteProfileOneScreen().launch(context);

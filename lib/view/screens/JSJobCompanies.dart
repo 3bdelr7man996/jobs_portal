@@ -78,7 +78,7 @@ class _JSJobCompaniesState extends State<JSJobCompanies> {
                 ),
                 8.height,
                 AppButton(
-                  color: js_primaryColor,
+                  color: JPColors.js_primaryColor,
                   width: context.width(),
                   onTap: () {
                     JSJobSearchScreen().launch(context);
@@ -89,7 +89,7 @@ class _JSJobCompaniesState extends State<JSJobCompanies> {
                 16.height,
                 Text("Do you want to search for salaries?",
                         style: boldTextStyle(
-                            color: js_textColor.withOpacity(0.7),
+                            color: JPColors.js_textColor.withOpacity(0.7),
                             decoration: TextDecoration.underline),
                         textAlign: TextAlign.center)
                     .center(),

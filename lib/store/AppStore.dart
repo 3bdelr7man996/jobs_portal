@@ -50,39 +50,39 @@ abstract class AppStoreBase with Store {
     isDarkModeOn = value ?? !isDarkModeOn;
 
     if (isDarkModeOn) {
-      scaffoldBackground = appBackgroundColorDark;
+      scaffoldBackground = JPColors.appBackgroundColorDark;
 
-      appBarColor = appBackgroundColorDark;
+      appBarColor = JPColors.appBackgroundColorDark;
       backgroundColor = Colors.white;
       backgroundSecondaryColor = Colors.white;
-      appColorPrimaryLightColor = cardBackgroundBlackDark;
+      appColorPrimaryLightColor = JPColors.cardBackgroundBlackDark;
 
-      iconColor = iconColorPrimary;
-      iconSecondaryColor = iconColorSecondary;
+      iconColor = JPColors.iconColorPrimary;
+      iconSecondaryColor = JPColors.iconColorSecondary;
 
       textPrimaryColor = whiteColor;
       textSecondaryColor = Colors.white54;
 
       textPrimaryColorGlobal = whiteColor;
       textSecondaryColorGlobal = Colors.white54;
-      shadowColorGlobal = appShadowColorDark;
+      shadowColorGlobal = JPColors.appShadowColorDark;
     } else {
       scaffoldBackground = whiteColor;
 
       appBarColor = Colors.white;
       backgroundColor = Colors.black;
-      backgroundSecondaryColor = appSecondaryBackgroundColor;
-      appColorPrimaryLightColor = appColorPrimaryLight;
+      backgroundSecondaryColor = JPColors.appSecondaryBackgroundColor;
+      appColorPrimaryLightColor = JPColors.appColorPrimaryLight;
 
-      iconColor = iconColorPrimaryDark;
-      iconSecondaryColor = iconColorSecondaryDark;
+      iconColor = JPColors.iconColorPrimaryDark;
+      iconSecondaryColor = JPColors.iconColorSecondaryDark;
 
-      textPrimaryColor = appTextColorPrimary;
-      textSecondaryColor = appTextColorSecondary;
+      textPrimaryColor = JPColors.appTextColorPrimary;
+      textSecondaryColor = JPColors.appTextColorSecondary;
 
-      textPrimaryColorGlobal = appTextColorPrimary;
-      textSecondaryColorGlobal = appTextColorSecondary;
-      shadowColorGlobal = appShadowColor;
+      textPrimaryColorGlobal = JPColors.appTextColorPrimary;
+      textSecondaryColorGlobal = JPColors.appTextColorSecondary;
+      shadowColorGlobal = JPColors.appShadowColor;
     }
     setStatusBarColor(scaffoldBackground!);
 

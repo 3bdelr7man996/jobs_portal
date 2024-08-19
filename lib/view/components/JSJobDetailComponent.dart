@@ -79,7 +79,7 @@ class _JSJobDetailComponentState extends State<JSJobDetailComponent> {
               decoration: boxDecorationWithRoundedCorners(
                 backgroundColor: appStore.isDarkModeOn
                     ? scaffoldDarkColor
-                    : js_backGroundColor,
+                    : JPColors.js_backGroundColor,
               ),
               child: Text('Urgently needed', style: primaryTextStyle())),
           24.height,

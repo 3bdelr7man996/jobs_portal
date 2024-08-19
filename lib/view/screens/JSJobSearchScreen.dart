@@ -103,7 +103,7 @@ class _JSJobSearchScreenState extends State<JSJobSearchScreen> {
                 ),
                 24.height,
                 AppButton(
-                  color: js_primaryColor,
+                  color: JPColors.js_primaryColor,
                   width: context.width(),
                   onTap: () {
                     JSSearchResultScreen(
@@ -128,7 +128,7 @@ class _JSJobSearchScreenState extends State<JSJobSearchScreen> {
                         decoration: boxDecorationWithRoundedCorners(
                           backgroundColor: appStore.isDarkModeOn
                               ? scaffoldDarkColor
-                              : js_backGroundColor,
+                              : JPColors.js_backGroundColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         width: context.width() * 0.5 - 24,

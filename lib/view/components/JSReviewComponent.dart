@@ -65,7 +65,7 @@ class _JSReviewComponentState extends State<JSReviewComponent> {
                 Text(
                   data.totalReview.validate(),
                   style: secondaryTextStyle(
-                      color: js_primaryColor.withOpacity(0.8),
+                      color: JPColors.js_primaryColor.withOpacity(0.8),
                       decoration: TextDecoration.underline),
                 ),
               ],

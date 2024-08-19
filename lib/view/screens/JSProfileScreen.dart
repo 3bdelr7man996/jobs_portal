@@ -63,7 +63,8 @@ class _JSProfileScreenState extends State<JSProfileScreen> {
                 Container(
                   decoration: boxDecorationWithRoundedCorners(
                     boxShape: BoxShape.circle,
-                    border: Border.all(color: js_primaryColor, width: 4),
+                    border:
+                        Border.all(color: JPColors.js_primaryColor, width: 4),
                     backgroundColor: context.scaffoldBackgroundColor,
                   ),
                   padding: EdgeInsets.all(24),
@@ -79,7 +80,8 @@ class _JSProfileScreenState extends State<JSProfileScreen> {
                         Text('Smit Jhon', style: boldTextStyle(size: 22)),
                         IconButton(
                             onPressed: () {},
-                            icon: Icon(Icons.edit, color: js_primaryColor))
+                            icon: Icon(Icons.edit,
+                                color: JPColors.js_primaryColor))
                       ],
                     ),
                     Row(
@@ -97,7 +99,7 @@ class _JSProfileScreenState extends State<JSProfileScreen> {
               labelColor: appStore.isDarkModeOn ? white : black,
               unselectedLabelColor: gray,
               isScrollable: false,
-              indicatorColor: js_primaryColor,
+              indicatorColor: JPColors.js_primaryColor,
               tabs: [
                 Tab(
                     child: Text("CV",

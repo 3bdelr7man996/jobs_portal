@@ -113,7 +113,8 @@ class _JSCompleteProfileOneScreenState
                   children: [
                     Text("Street Address", style: boldTextStyle()),
                     8.width,
-                    Icon(Icons.info_outline, color: js_primaryColor, size: 18),
+                    Icon(Icons.info_outline,
+                        color: JPColors.js_primaryColor, size: 18),
                   ],
                 ),
                 Container(
@@ -136,7 +137,7 @@ class _JSCompleteProfileOneScreenState
                   children: [
                     Text("City- United Kingdom (", style: boldTextStyle()),
                     Text("Change",
-                        style: boldTextStyle(color: js_primaryColor)),
+                        style: boldTextStyle(color: JPColors.js_primaryColor)),
                     Text(") *", style: boldTextStyle()),
                   ],
                 ),
@@ -173,7 +174,7 @@ class _JSCompleteProfileOneScreenState
                 ),
                 24.height,
                 AppButton(
-                  color: js_primaryColor,
+                  color: JPColors.js_primaryColor,
                   width: context.width(),
                   onTap: () {
                     JSCompleteProfileTwoScreen().launch(context);

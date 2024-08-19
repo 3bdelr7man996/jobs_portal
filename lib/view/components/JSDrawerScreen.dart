@@ -85,7 +85,7 @@ class _JSDrawerScreenState extends State<JSDrawerScreen> {
                   Container(
                       color: appStore.isDarkModeOn
                           ? scaffoldDarkColor
-                          : js_backGroundColor,
+                          : JPColors.js_backGroundColor,
                       height: 10,
                       width: context.width()),
                   Column(

@@ -158,7 +158,8 @@ class _JSCompleteProfileTwoScreenState
                             Text("City- United Kingdom (",
                                 style: boldTextStyle()),
                             Text("Change",
-                                style: boldTextStyle(color: js_primaryColor)),
+                                style: boldTextStyle(
+                                    color: JPColors.js_primaryColor)),
                             Text(") *", style: boldTextStyle()),
                           ],
                         ),
@@ -211,7 +212,7 @@ class _JSCompleteProfileTwoScreenState
             bottom: 16,
             right: 16,
             child: AppButton(
-              color: js_primaryColor,
+              color: JPColors.js_primaryColor,
               width: context.width(),
               onTap: () {
                 JSCompleteProfileThreeScreen().launch(context);

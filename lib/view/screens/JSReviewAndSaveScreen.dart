@@ -56,7 +56,7 @@ class _JSReviewAndSaveScreenState extends State<JSReviewAndSaveScreen> {
             Container(
               color: appStore.isDarkModeOn
                   ? scaffoldDarkColor
-                  : js_backGroundColor,
+                  : JPColors.js_backGroundColor,
               child:
                   Text("Review draft and save", style: boldTextStyle(size: 24)),
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),

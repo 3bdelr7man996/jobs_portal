@@ -61,7 +61,7 @@ class _JSCompanyProfileScreensState extends State<JSCompanyProfileScreens> {
         body: Column(
           children: [
             Container(
-              color: js_primaryColor,
+              color: JPColors.js_primaryColor,
               padding: EdgeInsets.all(16),
               child: Column(
                 children: [
@@ -121,7 +121,7 @@ class _JSCompanyProfileScreensState extends State<JSCompanyProfileScreens> {
                       //JSCompleteProfileTwoScreen().launch(context);
                     },
                     child: Text("Follow",
-                        style: boldTextStyle(color: js_primaryColor)),
+                        style: boldTextStyle(color: JPColors.js_primaryColor)),
                   ),
                   8.height,
                   Text("Get weekly updates, new jobs and review",
@@ -134,7 +134,7 @@ class _JSCompanyProfileScreensState extends State<JSCompanyProfileScreens> {
               labelColor: appStore.isDarkModeOn ? white : black,
               unselectedLabelColor: gray,
               isScrollable: true,
-              indicatorColor: js_primaryColor,
+              indicatorColor: JPColors.js_primaryColor,
               tabs: [
                 Tab(
                   child: Text("Profile",

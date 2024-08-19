@@ -42,7 +42,7 @@ class _JSRemoveJobComponentState extends State<JSRemoveJobComponent> {
               style: secondaryTextStyle(size: 12)),
           value: removeJobsList.isBlocked.validate(),
           dense: true,
-          activeColor: js_primaryColor,
+          activeColor: JPColors.js_primaryColor,
           contentPadding: EdgeInsets.all(0),
           controlAffinity: ListTileControlAffinity.leading,
           onChanged: (bool? val) {

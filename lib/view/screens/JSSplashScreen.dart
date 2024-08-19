@@ -41,7 +41,7 @@ class _JSSplashScreenState extends State<JSSplashScreen> {
           Image.asset(js_SplashImage,
               height: 130,
               fit: BoxFit.cover,
-              color: appStore.isDarkModeOn ? white : js_primaryColor),
+              color: appStore.isDarkModeOn ? white : JPColors.js_primaryColor),
           Image.asset(js_loader, height: 35.0, width: 35.0),
         ],
       ).center(),

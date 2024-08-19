@@ -62,7 +62,8 @@ class _JSFilteredScreenState extends State<JSFilteredScreen> {
                     Container(
                       decoration: boxDecorationWithRoundedCorners(
                         borderRadius: BorderRadius.circular(4),
-                        border: Border.all(color: js_primaryColor, width: 2),
+                        border: Border.all(
+                            color: JPColors.js_primaryColor, width: 2),
                         backgroundColor: context.scaffoldBackgroundColor,
                       ),
                       child: IconButton(
@@ -79,7 +80,8 @@ class _JSFilteredScreenState extends State<JSFilteredScreen> {
                           finish(context);
                         },
                         child: Text("Reset",
-                            style: boldTextStyle(color: js_primaryColor))),
+                            style: boldTextStyle(
+                                color: JPColors.js_primaryColor))),
                   ],
                 ).paddingOnly(left: 8, right: 8, bottom: 16),
               ),
@@ -119,7 +121,7 @@ class _JSFilteredScreenState extends State<JSFilteredScreen> {
               },
               width: context.width(),
               margin: EdgeInsets.all(16),
-              color: js_primaryColor,
+              color: JPColors.js_primaryColor,
               child: Text("Update", style: boldTextStyle(color: white)),
             ),
           )

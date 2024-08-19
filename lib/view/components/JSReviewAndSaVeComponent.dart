@@ -56,7 +56,7 @@ class _JSReviewAndSaVeComponentState extends State<JSReviewAndSaVeComponent> {
                   Text(widget.reviewDraftList!.companyName.validate(),
                       style: boldTextStyle()),
                   16.width,
-                  Icon(Icons.edit, color: js_primaryColor, size: 18),
+                  Icon(Icons.edit, color: JPColors.js_primaryColor, size: 18),
                 ],
               ),
               24.height,
@@ -68,18 +68,19 @@ class _JSReviewAndSaVeComponentState extends State<JSReviewAndSaVeComponent> {
               8.height,
               Text(widget.reviewDraftList!.index.toString().validate(),
                   style: primaryTextStyle(
-                      color: js_primaryColor,
+                      color: JPColors.js_primaryColor,
                       decoration: TextDecoration.underline)),
               24.height,
               Row(
                 children: [
-                  Icon(Icons.add_circle_outline, color: js_primaryColor)
+                  Icon(Icons.add_circle_outline,
+                          color: JPColors.js_primaryColor)
                       .onTap(() {
                     //
                   }),
                   16.width,
                   Text("Add your headline or summary",
-                      style: boldTextStyle(color: js_primaryColor)),
+                      style: boldTextStyle(color: JPColors.js_primaryColor)),
                 ],
               ),
               24.height,
@@ -90,7 +91,7 @@ class _JSReviewAndSaVeComponentState extends State<JSReviewAndSaVeComponent> {
                   IconButton(
                       onPressed: () {},
                       icon: Icon(Icons.add_circle_outline,
-                          color: js_primaryColor)),
+                          color: JPColors.js_primaryColor)),
                 ],
               ),
               Divider(height: 0, color: gray.withOpacity(0.2)),
@@ -108,7 +109,7 @@ class _JSReviewAndSaVeComponentState extends State<JSReviewAndSaVeComponent> {
                   IconButton(
                       onPressed: () {},
                       icon: Icon(Icons.add_circle_outline,
-                          color: js_primaryColor)),
+                          color: JPColors.js_primaryColor)),
                 ],
               ),
               Divider(height: 0, color: gray.withOpacity(0.2)),
@@ -122,10 +123,12 @@ class _JSReviewAndSaVeComponentState extends State<JSReviewAndSaVeComponent> {
                     children: [
                       IconButton(
                           onPressed: () {},
-                          icon: Icon(Icons.edit, color: js_primaryColor)),
+                          icon: Icon(Icons.edit,
+                              color: JPColors.js_primaryColor)),
                       IconButton(
                           onPressed: () {},
-                          icon: Icon(Icons.delete, color: js_primaryColor)),
+                          icon: Icon(Icons.delete,
+                              color: JPColors.js_primaryColor)),
                     ],
                   ),
                 ],
@@ -146,7 +149,7 @@ class _JSReviewAndSaVeComponentState extends State<JSReviewAndSaVeComponent> {
                   IconButton(
                       onPressed: () {},
                       icon: Icon(Icons.add_circle_outline,
-                          color: js_primaryColor)),
+                          color: JPColors.js_primaryColor)),
                 ],
               ),
               Divider(height: 0, color: gray.withOpacity(0.2)),

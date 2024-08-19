@@ -46,7 +46,7 @@ class _JSDatePostedComponentState extends State<JSDatePostedComponent> {
             child: RadioListTile(
               dense: true,
               contentPadding: EdgeInsets.only(left: 0, bottom: 0),
-              activeColor: js_primaryColor,
+              activeColor: JPColors.js_primaryColor,
               value: i,
               groupValue: datePostedValue,
               onChanged: (int? val) {

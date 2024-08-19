@@ -43,9 +43,10 @@ class _JSRecentSearchesScreenState extends State<JSRecentSearchesScreen> {
                   OutlinedButton(
                     onPressed: () {},
                     style: OutlinedButton.styleFrom(
-                        side: BorderSide(width: 1.0, color: js_primaryColor)),
+                        side: BorderSide(
+                            width: 1.0, color: JPColors.js_primaryColor)),
                     child: Text("Edit",
-                        style: boldTextStyle(color: js_primaryColor)),
+                        style: boldTextStyle(color: JPColors.js_primaryColor)),
                   )
                 ],
               ),

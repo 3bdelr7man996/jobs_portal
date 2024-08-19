@@ -10,8 +10,8 @@ class AppThemeData {
 
   static final ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: whiteColor,
-    primaryColor: appColorPrimary,
-    primaryColorDark: appColorPrimary,
+    primaryColor: JPColors.appColorPrimary,
+    primaryColorDark: JPColors.appColorPrimary,
     hoverColor: Colors.white54,
     dividerColor: viewLineColor,
     fontFamily: GoogleFonts.openSans().fontFamily,
@@ -27,13 +27,13 @@ class AppThemeData {
     iconTheme: IconThemeData(color: textPrimaryColor),
     bottomSheetTheme: BottomSheetThemeData(backgroundColor: whiteColor),
     textTheme: TextTheme(
-      labelLarge: TextStyle(color: appColorPrimary),
+      labelLarge: TextStyle(color: JPColors.appColorPrimary),
       titleLarge: TextStyle(color: textPrimaryColor),
       titleSmall: TextStyle(color: textSecondaryColor),
     ),
     visualDensity: VisualDensity.adaptivePlatformDensity,
-    colorScheme:
-        ColorScheme.light(primary: appColorPrimary).copyWith(error: Colors.red),
+    colorScheme: ColorScheme.light(primary: JPColors.appColorPrimary)
+        .copyWith(error: Colors.red),
   ).copyWith(
     pageTransitionsTheme:
         PageTransitionsTheme(builders: <TargetPlatform, PageTransitionsBuilder>{
@@ -45,36 +45,37 @@ class AppThemeData {
   );
 
   static final ThemeData darkTheme = ThemeData(
-    scaffoldBackgroundColor: appBackgroundColorDark,
-    highlightColor: appBackgroundColorDark,
+    scaffoldBackgroundColor: JPColors.appBackgroundColorDark,
+    highlightColor: JPColors.appBackgroundColorDark,
     appBarTheme: AppBarTheme(
-      color: appBackgroundColorDark,
+      color: JPColors.appBackgroundColorDark,
       iconTheme: IconThemeData(color: blackColor),
       systemOverlayStyle:
           SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light),
     ),
-    primaryColor: color_primary_black,
+    primaryColor: JPColors.color_primary_black,
     dividerColor: Color(0xFFDADADA).withOpacity(0.3),
-    primaryColorDark: color_primary_black,
+    primaryColorDark: JPColors.color_primary_black,
     textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.white),
     hoverColor: Colors.black12,
     fontFamily: GoogleFonts.openSans().fontFamily,
     bottomSheetTheme:
-        BottomSheetThemeData(backgroundColor: appBackgroundColorDark),
+        BottomSheetThemeData(backgroundColor: JPColors.appBackgroundColorDark),
     primaryTextTheme: TextTheme(
         titleLarge: primaryTextStyle(color: Colors.white),
         labelSmall: primaryTextStyle(color: Colors.white)),
-    cardTheme: CardTheme(color: cardBackgroundBlackDark),
-    cardColor: appSecondaryBackgroundColor,
+    cardTheme: CardTheme(color: JPColors.cardBackgroundBlackDark),
+    cardColor: JPColors.appSecondaryBackgroundColor,
     iconTheme: IconThemeData(color: whiteColor),
     textTheme: TextTheme(
-      labelLarge: TextStyle(color: color_primary_black),
+      labelLarge: TextStyle(color: JPColors.color_primary_black),
       titleLarge: TextStyle(color: whiteColor),
       titleSmall: TextStyle(color: Colors.white54),
     ),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     colorScheme: ColorScheme.dark(
-            primary: appBackgroundColorDark, onPrimary: cardBackgroundBlackDark)
+            primary: JPColors.appBackgroundColorDark,
+            onPrimary: JPColors.cardBackgroundBlackDark)
         .copyWith(secondary: whiteColor)
         .copyWith(error: Color(0xFFCF6676)),
   ).copyWith(

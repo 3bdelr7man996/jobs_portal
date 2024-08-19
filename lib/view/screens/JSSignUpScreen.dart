@@ -39,12 +39,13 @@ class _JSSignUpScreenState extends State<JSSignUpScreen> {
           Container(
               color: appStore.isDarkModeOn
                   ? scaffoldDarkColor
-                  : js_backGroundColor),
+                  : JPColors.js_backGroundColor),
           Align(
             alignment: Alignment.topCenter,
             child: Image.asset(js_SplashImage,
                 height: 100,
-                color: appStore.isDarkModeOn ? white : js_primaryColor),
+                color:
+                    appStore.isDarkModeOn ? white : JPColors.js_primaryColor),
           ),
           Positioned(
             top: 95,
@@ -146,18 +147,18 @@ class _JSSignUpScreenState extends State<JSSignUpScreen> {
                           TextSpan(
                               text: 'Terms, ',
                               style: boldTextStyle(
-                                  color: js_primaryColor,
+                                  color: JPColors.js_primaryColor,
                                   decoration: TextDecoration.underline)),
                           TextSpan(
                               text: 'Cookie ',
                               style: boldTextStyle(
-                                  color: js_primaryColor,
+                                  color: JPColors.js_primaryColor,
                                   decoration: TextDecoration.underline)),
                           TextSpan(text: 'and ', style: secondaryTextStyle()),
                           TextSpan(
                               text: 'privacy ',
                               style: boldTextStyle(
-                                  color: js_primaryColor,
+                                  color: JPColors.js_primaryColor,
                                   decoration: TextDecoration.underline)),
                           TextSpan(
                               text: 'policies', style: secondaryTextStyle()),
@@ -181,7 +182,7 @@ class _JSSignUpScreenState extends State<JSSignUpScreen> {
             right: 16,
             bottom: 60,
             child: AppButton(
-              color: js_primaryColor,
+              color: JPColors.js_primaryColor,
               onTap: () {
                 JSJobSearchScreen().launch(context);
               },

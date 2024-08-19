@@ -47,7 +47,7 @@ class _JSRemoteFilterComponentState extends State<JSRemoteFilterComponent> {
             child: RadioListTile(
               dense: true,
               contentPadding: EdgeInsets.only(left: 0, bottom: 0),
-              activeColor: js_primaryColor,
+              activeColor: JPColors.js_primaryColor,
               value: i,
               groupValue: remoteValue,
               onChanged: (int? val) {

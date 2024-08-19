@@ -144,7 +144,7 @@ class _JSSearchResultScreenState extends State<JSSearchResultScreen> {
                     borderRadius: BorderRadius.circular(8),
                     backgroundColor: appStore.isDarkModeOn
                         ? scaffoldDarkColor
-                        : js_backGroundColor,
+                        : JPColors.js_backGroundColor,
                   ),
                   height: 35,
                   padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
@@ -173,7 +173,7 @@ class _JSSearchResultScreenState extends State<JSSearchResultScreen> {
                     borderRadius: BorderRadius.circular(8),
                     backgroundColor: appStore.isDarkModeOn
                         ? scaffoldDarkColor
-                        : js_backGroundColor,
+                        : JPColors.js_backGroundColor,
                   ),
                   height: 35,
                   padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
@@ -202,7 +202,7 @@ class _JSSearchResultScreenState extends State<JSSearchResultScreen> {
                     borderRadius: BorderRadius.circular(8),
                     backgroundColor: appStore.isDarkModeOn
                         ? scaffoldDarkColor
-                        : js_backGroundColor,
+                        : JPColors.js_backGroundColor,
                   ),
                   height: 35,
                   padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),

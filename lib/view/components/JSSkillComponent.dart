@@ -49,7 +49,7 @@ class _JSSkillComponentState extends State<JSSkillComponent> {
             backgroundColor: appStore.isDarkModeOn
                 ? scaffoldDarkColor
                 : data.selectSkill.validate()
-                    ? js_selectSkillBgColor.withOpacity(0.7)
+                    ? JPColors.js_selectSkillBgColor.withOpacity(0.7)
                     : white,
           ),
           margin: EdgeInsets.symmetric(vertical: 8),
@@ -57,10 +57,10 @@ class _JSSkillComponentState extends State<JSSkillComponent> {
           child: Row(
             children: [
               Icon(data.selectSkill.validate() ? Icons.done : Icons.add,
-                  color: js_primaryColor, size: 16),
+                  color: JPColors.js_primaryColor, size: 16),
               16.width,
               Text(data.companyName.validate(),
-                  style: boldTextStyle(color: js_primaryColor)),
+                  style: boldTextStyle(color: JPColors.js_primaryColor)),
             ],
           ),
         ).onTap(() {

@@ -43,7 +43,7 @@ class _JSEnableNotificationDialogState
             js_enable_notification,
             fit: BoxFit.cover,
             height: 90,
-            color: appStore.isDarkModeOn ? white : js_primaryColor,
+            color: appStore.isDarkModeOn ? white : JPColors.js_primaryColor,
           ),
           16.height,
           Text("Get Job Updates", style: boldTextStyle(size: 22)),
@@ -69,7 +69,7 @@ class _JSEnableNotificationDialogState
           ),
           16.height,
           AppButton(
-            color: js_primaryColor,
+            color: JPColors.js_primaryColor,
             width: context.width(),
             onTap: () {
               finish(context);
@@ -85,7 +85,7 @@ class _JSEnableNotificationDialogState
             width: context.width(),
             child: OutlinedButton(
               child: Text("Skip for now",
-                      style: boldTextStyle(color: js_primaryColor))
+                      style: boldTextStyle(color: JPColors.js_primaryColor))
                   .paddingSymmetric(vertical: 12),
               onPressed: () {
                 finish(context);

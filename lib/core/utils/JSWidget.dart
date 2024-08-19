@@ -42,7 +42,7 @@ InputDecoration jsInputDecoration(
       hintStyle: secondaryTextStyle(),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
-        borderSide: BorderSide(color: js_primaryColor),
+        borderSide: BorderSide(color: JPColors.js_primaryColor),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
@@ -94,7 +94,8 @@ PreferredSizeWidget jsAppBar(BuildContext context,
                   height: 30,
                   width: 80,
                   fit: BoxFit.cover,
-                  color: appStore.isDarkModeOn ? white : js_primaryColor,
+                  color:
+                      appStore.isDarkModeOn ? white : JPColors.js_primaryColor,
                 ).paddingOnly(left: 8),
                 Row(
                   children: [
@@ -125,7 +126,8 @@ PreferredSizeWidget jsAppBar(BuildContext context,
 Widget jsCompleteProfileStep(BuildContext context,
     {int? stepSubTitle, bool? hideCV}) {
   return Container(
-    color: appStore.isDarkModeOn ? scaffoldDarkColor : js_backGroundColor,
+    color:
+        appStore.isDarkModeOn ? scaffoldDarkColor : JPColors.js_backGroundColor,
     width: context.width(),
     padding: EdgeInsets.only(top: 24, left: 16, right: 16, bottom: 16),
     child: Column(
@@ -142,7 +144,7 @@ Widget jsCompleteProfileStep(BuildContext context,
                     TextSpan(
                       text: 'Upload a CV',
                       style: boldTextStyle(
-                          color: js_textColor,
+                          color: JPColors.js_textColor,
                           decoration: TextDecoration.underline),
                     ),
                   ],
@@ -229,8 +231,9 @@ Widget filteredWidget({Widget? widget}) {
     child: widget,
     decoration: boxDecorationWithRoundedCorners(
       borderRadius: BorderRadius.circular(8),
-      backgroundColor:
-          appStore.isDarkModeOn ? scaffoldDarkColor : js_backGroundColor,
+      backgroundColor: appStore.isDarkModeOn
+          ? scaffoldDarkColor
+          : JPColors.js_backGroundColor,
     ),
     padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
   );

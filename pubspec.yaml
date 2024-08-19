@@ -23,6 +23,10 @@ dependencies:
   # STATE MANAGEMENT
   mobx: ^2.2.0
   flutter_mobx: ^2.0.6+5
+  provider: ^6.1.2
+  shimmer: ^3.0.0
+  bot_toast: ^4.1.3
+  logger: ^2.4.0
 
 
 dev_dependencies:

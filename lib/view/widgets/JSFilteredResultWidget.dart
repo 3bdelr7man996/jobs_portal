@@ -67,7 +67,7 @@ class _JSFilteredResultWidgetState extends State<JSFilteredResultWidget> {
                           : Icons.favorite_border,
                       size: 20,
                       color: widget.filteredResultsList.selectSkill.validate()
-                          ? js_primaryColor
+                          ? JPColors.js_primaryColor
                           : appStore.isDarkModeOn
                               ? white
                               : black,
@@ -104,7 +104,7 @@ class _JSFilteredResultWidgetState extends State<JSFilteredResultWidget> {
                     8,
                     backgroundColor: appStore.isDarkModeOn
                         ? scaffoldDarkColor
-                        : js_backGroundColor,
+                        : JPColors.js_backGroundColor,
                   ),
                   padding: EdgeInsets.all(8),
                   //width: 165,
@@ -124,7 +124,7 @@ class _JSFilteredResultWidgetState extends State<JSFilteredResultWidget> {
                 16.height,
                 Row(
                   children: [
-                    Icon(Icons.send, size: 18, color: js_primaryColor),
+                    Icon(Icons.send, size: 18, color: JPColors.js_primaryColor),
                     4.width,
                     Text("Apply with your Indeed CV",
                         style: secondaryTextStyle()),
@@ -178,7 +178,7 @@ class _JSFilteredResultWidgetState extends State<JSFilteredResultWidget> {
                           },
                           width: context.width(),
                           margin: EdgeInsets.all(16),
-                          color: js_primaryColor,
+                          color: JPColors.js_primaryColor,
                           child: Text("Apply Now",
                               style: boldTextStyle(color: white)),
                         ),
@@ -263,7 +263,7 @@ class _JSFilteredResultWidgetState extends State<JSFilteredResultWidget> {
                                     },
                                     width: context.width(),
                                     margin: EdgeInsets.all(16),
-                                    color: js_primaryColor,
+                                    color: JPColors.js_primaryColor,
                                     child: Text("Send feedback",
                                         style: boldTextStyle(color: white)),
                                   )
@@ -274,17 +274,21 @@ class _JSFilteredResultWidgetState extends State<JSFilteredResultWidget> {
                         );
                       },
                       style: OutlinedButton.styleFrom(
-                          side: BorderSide(width: 1.0, color: js_primaryColor)),
+                          side: BorderSide(
+                              width: 1.0, color: JPColors.js_primaryColor)),
                       child: Text("Give feedBack",
-                          style: boldTextStyle(color: js_primaryColor)),
+                          style:
+                              boldTextStyle(color: JPColors.js_primaryColor)),
                     ),
                     16.width,
                     OutlinedButton(
                       onPressed: () {},
                       style: OutlinedButton.styleFrom(
-                          side: BorderSide(width: 1.0, color: js_primaryColor)),
+                          side: BorderSide(
+                              width: 1.0, color: JPColors.js_primaryColor)),
                       child: Text("Undo",
-                          style: boldTextStyle(color: js_primaryColor)),
+                          style:
+                              boldTextStyle(color: JPColors.js_primaryColor)),
                     ),
                   ],
                 ),

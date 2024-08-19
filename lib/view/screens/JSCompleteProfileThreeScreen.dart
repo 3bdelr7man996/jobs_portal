@@ -103,7 +103,7 @@ class _JSCompleteProfileThreeScreenState
         _scaffoldkey.currentState!.openDrawer();
       }),
       floatingActionButton: AppButton(
-        color: js_primaryColor,
+        color: JPColors.js_primaryColor,
         width: 100,
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         onTap: () {
@@ -178,7 +178,8 @@ class _JSCompleteProfileThreeScreenState
                             Text("City- United Kingdom (",
                                 style: boldTextStyle()),
                             Text("Change",
-                                style: boldTextStyle(color: js_primaryColor)),
+                                style: boldTextStyle(
+                                    color: JPColors.js_primaryColor)),
                             Text(") *", style: boldTextStyle()),
                           ],
                         ),
@@ -210,7 +211,7 @@ class _JSCompleteProfileThreeScreenState
                       title: Text("I currently work here",
                           style: primaryTextStyle()),
                       value: _value,
-                      activeColor: js_primaryColor,
+                      activeColor: JPColors.js_primaryColor,
                       dense: true,
                       onChanged: (bool? newValue) {
                         setState(() {

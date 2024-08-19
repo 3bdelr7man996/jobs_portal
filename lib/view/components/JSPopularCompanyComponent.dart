@@ -70,14 +70,14 @@ class _JsPopularCompanyComponentState extends State<JsPopularCompanyComponent> {
                           itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
                           itemBuilder: (context, _) => Icon(
                             Icons.star,
-                            color: js_ratingColor,
+                            color: JPColors.js_ratingColor,
                           ),
                           onRatingUpdate: (rating) {},
                         ),
                         8.width,
                         Text(data.totalReview.validate(),
                             style: secondaryTextStyle(
-                                color: js_textColor.withOpacity(0.7)))
+                                color: JPColors.js_textColor.withOpacity(0.7)))
                       ],
                     ),
                   ],

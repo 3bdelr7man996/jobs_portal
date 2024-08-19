@@ -73,13 +73,13 @@ class _JSHomeScreenState extends State<JSHomeScreen> {
                 height: 10,
                 color: appStore.isDarkModeOn
                     ? scaffoldDarkColor
-                    : js_backGroundColor),
+                    : JPColors.js_backGroundColor),
             8.height,
             TabBar(
               labelColor: appStore.isDarkModeOn ? white : black,
               unselectedLabelColor: gray,
               isScrollable: false,
-              indicatorColor: js_primaryColor,
+              indicatorColor: JPColors.js_primaryColor,
               tabs: [
                 Tab(
                     child: Text("Job feed",

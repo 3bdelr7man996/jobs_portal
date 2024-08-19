@@ -95,7 +95,7 @@ class _JSCompleteProfileFiveScreenState
                                   style: boldTextStyle()),
                               value: desireJobTypeList.isBlocked.validate(),
                               dense: true,
-                              activeColor: js_primaryColor,
+                              activeColor: JPColors.js_primaryColor,
                               controlAffinity: ListTileControlAffinity.leading,
                               contentPadding: EdgeInsets.all(0),
                               onChanged: (bool? val) {
@@ -117,7 +117,7 @@ class _JSCompleteProfileFiveScreenState
             right: 16,
             bottom: 8,
             child: AppButton(
-              color: js_primaryColor,
+              color: JPColors.js_primaryColor,
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               onTap: () {
                 JSHomeScreen().launch(context);

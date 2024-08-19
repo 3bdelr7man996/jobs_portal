@@ -37,8 +37,9 @@ class _JSCvComponentState extends State<JSCvComponent> {
       margin: EdgeInsets.all(16),
       decoration: boxDecorationWithRoundedCorners(
         borderRadius: BorderRadius.circular(8),
-        backgroundColor:
-            appStore.isDarkModeOn ? scaffoldDarkColor : js_backGroundColor,
+        backgroundColor: appStore.isDarkModeOn
+            ? scaffoldDarkColor
+            : JPColors.js_backGroundColor,
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -62,7 +63,7 @@ class _JSCvComponentState extends State<JSCvComponent> {
                           style: boldTextStyle()),
                       value: skillList.isBlocked.validate(),
                       dense: true,
-                      activeColor: js_primaryColor,
+                      activeColor: JPColors.js_primaryColor,
                       controlAffinity: ListTileControlAffinity.leading,
                       contentPadding: EdgeInsets.all(0),
                       onChanged: (bool? val) {
@@ -76,7 +77,7 @@ class _JSCvComponentState extends State<JSCvComponent> {
             ),
             24.height,
             AppButton(
-              color: js_textColor,
+              color: JPColors.js_textColor,
               width: context.width(),
               margin: EdgeInsets.symmetric(horizontal: 8),
               onTap: () {
@@ -87,7 +88,7 @@ class _JSCvComponentState extends State<JSCvComponent> {
               child: Text("Save", style: boldTextStyle(color: white)),
             ),
             24.height,
-            Text("Dismiss", style: boldTextStyle(color: js_textColor))
+            Text("Dismiss", style: boldTextStyle(color: JPColors.js_textColor))
                 .paddingOnly(left: 16, bottom: 22),
           ],
         ),
