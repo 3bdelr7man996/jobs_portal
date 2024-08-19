@@ -11,27 +11,27 @@ import 'package:job_search/core/utils/JSImage.dart';
 List<JSPopularCompanyModel> getPopularCompanyData() {
   List<JSPopularCompanyModel> list = [];
   list.add(JSPopularCompanyModel(
-      companyImage: js_google,
+      companyImage: JPImages.js_google,
       companyName: "Google",
       companyRatting: 5.0,
       totalReview: "120 Reviews"));
   list.add(JSPopularCompanyModel(
-      companyImage: js_infosys,
+      companyImage: JPImages.js_infosys,
       companyName: "Infosys",
       companyRatting: 4.2,
       totalReview: "60 Reviews"));
   list.add(JSPopularCompanyModel(
-      companyImage: js_itc,
+      companyImage: JPImages.js_itc,
       companyName: "ITC Ltd",
       companyRatting: 3.0,
       totalReview: "100 Reviews"));
   list.add(JSPopularCompanyModel(
-      companyImage: js_hcl,
+      companyImage: JPImages.js_hcl,
       companyName: "HCL Technologies",
       companyRatting: 4.5,
       totalReview: "100 Reviews"));
   list.add(JSPopularCompanyModel(
-      companyImage: js_wipro,
+      companyImage: JPImages.js_wipro,
       companyName: "Wipro",
       companyRatting: 2.5,
       totalReview: "50 Reviews"));
@@ -89,7 +89,7 @@ List<JSPopularCompanyModel> getDrawerList2() {
   drawerList.add(JSPopularCompanyModel(
       selectSkill: true,
       companyName: "Country and Language",
-      companyImage: js_usFlag,
+      companyImage: JPImages.js_usFlag,
       totalReview: "united Kingdom"));
   drawerList.add(
       JSPopularCompanyModel(selectSkill: false, companyName: "Help Center"));

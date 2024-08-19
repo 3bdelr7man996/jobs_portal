@@ -34,12 +34,14 @@ Widget googleSignInWidget(
 InputDecoration jsInputDecoration(
     {Icon? icon, String? hintText, Icon? prefixIcon, bool? showPreFixIcon}) {
   return InputDecoration(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8.0),
-        borderSide: BorderSide(color: gray.withOpacity(0.4)),
-      ),
+      border: const OutlineInputBorder(borderSide: BorderSide.none),
+      isDense: true,
       hintText: hintText,
       hintStyle: secondaryTextStyle(),
+      // errorBorder: OutlineInputBorder(
+      //   borderRadius: BorderRadius.circular(8.0),
+      //   borderSide: BorderSide.none,
+      // ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
         borderSide: BorderSide(color: JPColors.js_primaryColor),
@@ -90,7 +92,7 @@ PreferredSizeWidget jsAppBar(BuildContext context,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
-                  JPImages.js_SplashImage,
+                  JPImages.jpLogo,
                   height: 30,
                   width: 80,
                   fit: BoxFit.cover,

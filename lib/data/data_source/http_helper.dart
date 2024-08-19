@@ -1,12 +1,11 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'package:job_search/core/utils/JSAppString.dart';
 import 'package:job_search/core/utils/app_logger.dart';
-import 'package:job_search/core/utils/cache_helper.dart';
 import 'package:job_search/core/utils/http_custom_exception.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 enum RequestState { initial, loading, success, failed }
 
@@ -19,9 +18,7 @@ class ApiBaseHelper {
       'Accept': 'application/json',
       'Content-Type': 'application/json; charset=UTF-8',
       'Connection': 'keep-alive',
-      'Authorization': 'Bearer ${CacheHelper.getData(
-        key: AppStrings.userToken,
-      )}'
+      'Authorization': 'Bearer ${getStringAsync(AppStrings.userToken)}'
     };
   }
   void updateHeader() {
@@ -29,9 +26,7 @@ class ApiBaseHelper {
       'Accept': 'application/json',
       'Content-Type': 'application/json; charset=UTF-8',
       'Connection': 'keep-alive',
-      'Authorization': 'Bearer ${CacheHelper.getData(
-        key: AppStrings.userToken,
-      )}'
+      'Authorization': 'Bearer ${getStringAsync(AppStrings.userToken)}'
     };
   }
 
@@ -99,9 +94,8 @@ class ApiBaseHelper {
 
       request.headers["Content-Type"] = "multipart/form-data";
       request.headers["Accept"] = "application/json";
-      request.headers["Authorization"] = 'Bearer ${CacheHelper.getData(
-        key: AppStrings.userToken,
-      )}';
+      request.headers["Authorization"] =
+          'Bearer ${getStringAsync(AppStrings.userToken)}';
 
       //init form data eg,name,description,...
       body?.forEach((key, value) {

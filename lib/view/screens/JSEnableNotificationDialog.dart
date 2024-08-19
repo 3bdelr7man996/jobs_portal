@@ -40,7 +40,7 @@ class _JSEnableNotificationDialogState
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            js_enable_notification,
+            JPImages.js_enable_notification,
             fit: BoxFit.cover,
             height: 90,
             color: appStore.isDarkModeOn ? white : JPColors.js_primaryColor,

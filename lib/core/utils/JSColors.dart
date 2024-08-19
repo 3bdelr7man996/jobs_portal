@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class JPColors {
-  static Color js_primaryColor = Color(0xFF3256A2);
+  static Color js_primaryColor = Color(0xFFD71A21);
+  static Color js_secondaryColor = Color(0xff056CB7);
   static Color js_backGroundColor = Color(0xFFF3F2F0);
   static Color js_textColor = Color(0xFF3060D6);
   static Color js_ratingColor = Color(0xFF8F3468);

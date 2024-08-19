@@ -73,7 +73,7 @@ class _JSNotificationScreenState extends State<JSNotificationScreen> {
                     child: Column(
                       children: [
                         16.height,
-                        commonCachedNetworkImage(js_notification,
+                        commonCachedNetworkImage(JPImages.js_notification,
                                 height: 100, fit: BoxFit.cover)
                             .center(),
                         8.height,

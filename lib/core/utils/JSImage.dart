@@ -1,5 +1,6 @@
 class JPImages {
-  static String js_SplashImage = "images/jobSearch/js_splash_logo.png";
+  static String jpSplashGif = "images/jobSearch/gif/logo-jobaaty.gif";
+  static String jpLogo = "images/jobSearch/jp_logo.png";
   static String js_loader = "images/jobSearch/gif/js_loader.gif";
   static String js_google_logo = "images/jobSearch/js_google_logo.png";
   static String js_apple_logo = "images/jobSearch/js_apple_logo.png";

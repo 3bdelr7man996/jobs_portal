@@ -88,7 +88,7 @@ class _JSCompanyProfileScreensState extends State<JSCompanyProfileScreens> {
                                       "${widget.popularCompanyList!.companyRatting.validate()}",
                                       style: boldTextStyle(color: white)),
                                   8.width,
-                                  commonCachedNetworkImage(js_smile,
+                                  commonCachedNetworkImage(JPImages.js_smile,
                                       height: 20, width: 20, fit: BoxFit.cover),
                                 ],
                               ),

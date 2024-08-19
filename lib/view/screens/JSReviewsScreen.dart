@@ -169,7 +169,7 @@ class _JSReviewsScreenState extends State<JSReviewsScreen> {
                 padding: EdgeInsets.all(16),
                 child: Row(
                   children: [
-                    commonCachedNetworkImage(js_mic,
+                    commonCachedNetworkImage(JPImages.js_mic,
                         width: 40, height: 40, fit: BoxFit.cover),
                     16.width,
                     Column(

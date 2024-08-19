@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:job_search/view/screens/JSSplashScreen.dart';
+import 'package:job_search/view/screens/splash/JSSplashScreen.dart';
 import 'package:job_search/store/AppStore.dart';
 import 'package:job_search/core/utils/AppTheme.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'core/multi_provider.dart';
+import 'di_container.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  initialize();
+  serviceLocatorInit();
+  runApp(multiProvider(child: const MyApp()));
 }
 
 AppStore appStore = AppStore();
@@ -20,7 +26,7 @@ class MyApp extends StatelessWidget {
       builder: (_) => MaterialApp(
         scrollBehavior: SBehavior(),
         navigatorKey: navigatorKey,
-        title: 'Job Search',
+        title: 'Jobaaty',
         debugShowCheckedModeBanner: false,
         theme: AppThemeData.lightTheme,
         darkTheme: AppThemeData.darkTheme,

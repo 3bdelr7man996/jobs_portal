@@ -102,7 +102,7 @@ class _JSMessagesScreenState extends State<JSMessagesScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: [
-                commonCachedNetworkImage(js_message,
+                commonCachedNetworkImage(JPImages.js_message,
                     fit: BoxFit.cover, height: 150),
                 16.height,
                 Text("Welcome to Messages", style: boldTextStyle(size: 22)),
