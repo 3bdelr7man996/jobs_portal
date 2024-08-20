@@ -118,7 +118,9 @@ class HomeProvider with ChangeNotifier {
       }
       debugPrint("Search body : $queryParameter");
       fetchedJobs = await repository.searchJob(queryParameter);
+      jobList = [];
       jobList.addAll(fetchedJobs?.data ?? []);
+      debugPrint("Job List length ${jobList.length}");
       searchLoading = false;
       notifyListeners();
     } catch (e) {

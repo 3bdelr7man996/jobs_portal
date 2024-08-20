@@ -123,7 +123,7 @@ class _JSSearchResultScreenState extends State<JSSearchResultScreen> {
           ),
           8.height,
           Text(
-            "${widget.jobTitle.validate()} jobs in ${widget.city.validate()}, Greater ${widget.city.validate()}",
+            "${widget.jobTitle.validate()} jobs",
             style: primaryTextStyle(),
             textAlign: TextAlign.start,
           ).paddingOnly(left: 16),
