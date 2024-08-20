@@ -2,10 +2,14 @@
 
 import 'package:get_it/get_it.dart';
 import 'package:job_search/core/utils/JSAppString.dart';
+import 'package:job_search/data/repositories/home_repo.dart';
 import 'package:job_search/data/repositories/sign_up_repo.dart';
 import 'package:job_search/provider/sign_up_provider.dart';
 
 import 'data/data_source/http_helper.dart';
+import 'data/repositories/sign_in_repo.dart';
+import 'provider/home_provider.dart';
+import 'provider/sign_in_provider.dart';
 
 final sl = GetIt.instance;
 // String myBaseUrl = '';
@@ -17,9 +21,13 @@ Future<void> serviceLocatorInit() async {
 
   //REPOSITORIES
   sl.registerLazySingleton(() => SignUpRepository(apiHelper: sl()));
+  sl.registerLazySingleton(() => SignInRepository(apiHelper: sl()));
+  sl.registerLazySingleton(() => HomeRepository(apiHelper: sl()));
 
   //provider
   sl.registerFactory(() => SignUpProvider(repository: sl()));
+  sl.registerFactory(() => SignInProvider(repository: sl()));
+  sl.registerFactory(() => HomeProvider(sl()));
 }
 
 Future<void> resetAndReinitializeLocator() async {

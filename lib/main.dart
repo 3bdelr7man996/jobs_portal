@@ -10,8 +10,8 @@ import 'di_container.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  initialize();
-  serviceLocatorInit();
+  await initialize();
+  await serviceLocatorInit();
   runApp(multiProvider(child: const MyApp()));
 }
 

@@ -17,7 +17,7 @@ class SignUpHeader extends StatelessWidget {
           : JPColors.js_backGroundColor,
       child: Image.asset(
         JPImages.jpLogo,
-        height: 100,
+        height: 85,
       ),
     );
   }

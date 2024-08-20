@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:job_search/view/components/JSPopularCompanyComponent.dart';
 import 'package:job_search/view/components/JSDrawerScreen.dart';
 import 'package:job_search/main.dart';
-import 'package:job_search/view/screens/JSJobSearchScreen.dart';
+import 'package:job_search/view/screens/home/JSJobSearchScreen.dart';
 import 'package:job_search/core/utils/JSColors.dart';
 import 'package:job_search/core/utils/JSConstant.dart';
 import 'package:job_search/core/utils/JSWidget.dart';

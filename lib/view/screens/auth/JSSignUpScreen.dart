@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_search/provider/sign_up_provider.dart';
+import 'package:job_search/view/widgets/auth/sign_up/back_to_login_rich_text.dart';
 import 'package:job_search/view/widgets/auth/sign_up/sign_up_button.dart';
 import 'package:job_search/view/widgets/auth/sign_up/sign_up_form.dart';
 import 'package:job_search/view/widgets/auth/sign_up/sign_up_header.dart';
@@ -35,7 +36,7 @@ class _JSSignUpScreenState extends State<JSSignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: jsAppBar(context, backWidget: false, homeAction: true),
+      appBar: jsAppBar(context, backWidget: true, homeAction: true),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -54,14 +55,22 @@ class _JSSignUpScreenState extends State<JSSignUpScreen> {
                 child: SignUpForm(
                   formKey: formKey,
                 )),
-            20.height,
+            //20.height,
             Consumer<SignUpProvider>(builder: (context, provider, _) {
               return provider.signUpLoad
-                  ? Loader()
+                  ? Loader(accentColor: Colors.red)
                   : SignUpButton(
                       formKey: formKey,
+                      onTap: () async {
+                        if (formKey.currentState!.validate()) {
+                          await context.read<SignUpProvider>().signUp(context);
+                        }
+                      },
                     );
             }),
+            10.height,
+            BackToLoginRichText(),
+            10.height,
           ],
         ),
       ),

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:job_search/view/screens/auth/JSSignUpScreen.dart';
+import 'package:job_search/core/utils/JSAppString.dart';
+import 'package:job_search/provider/home_provider.dart';
+import 'package:job_search/view/screens/home/JSJobSearchScreen.dart';
+import 'package:job_search/view/screens/auth/JOSignInScreen.dart';
 import 'package:job_search/view/widgets/splash/splash_body.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:provider/provider.dart';
 
 class JSSplashScreen extends StatefulWidget {
   const JSSplashScreen({Key? key}) : super(key: key);
@@ -19,9 +23,15 @@ class _JSSplashScreenState extends State<JSSplashScreen> {
 
   void init() async {
     setStatusBarColor(Colors.transparent);
-    await 3.seconds.delay;
+    await context.read<HomeProvider>().fetchAppConfigurations();
+    await initialize();
+    await 2.seconds.delay;
     finish(context);
-    JSSignUpScreen().launch(context, isNewTask: true);
+    if (getStringAsync(AppStrings.userToken).isEmpty) {
+      JOSignInScreen().launch(context, isNewTask: true);
+    } else {
+      JSJobSearchScreen().launch(context, isNewTask: true);
+    }
   }
 
   @override

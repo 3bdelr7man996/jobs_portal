@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:job_search/data/repositories/sign_up_repo.dart';
-import 'package:job_search/view/screens/JSJobSearchScreen.dart';
+import 'package:job_search/view/screens/home/JSJobSearchScreen.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class SignUpProvider with ChangeNotifier {
@@ -81,7 +81,9 @@ class SignUpProvider with ChangeNotifier {
         });
         _signupLoad = false;
         notifyListeners();
-        JSJobSearchScreen().launch(context, isNewTask: true);
+        if (context.mounted) {
+          JSJobSearchScreen().launch(context, isNewTask: true);
+        }
       } catch (e) {
         _signupLoad = false;
         notifyListeners();

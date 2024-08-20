@@ -8,6 +8,6 @@ class SignUpRepository {
 
   Future<bool> registerNewUser({required Map<String, String> body}) async {
     var response = await apiHelper.post(AppStrings.signUp, body: body);
-    return response == "User registered successfully.";
+    return response?['message'] == "User registered successfully.";
   }
 }

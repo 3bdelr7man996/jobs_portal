@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:job_search/data/model/JSPopularCompanyModel.dart';
 import 'package:job_search/view/screens/JSJobCompanies.dart';
-import 'package:job_search/view/screens/JSJobSearchScreen.dart';
+import 'package:job_search/view/screens/home/JSJobSearchScreen.dart';
 import 'package:job_search/view/screens/JSProfileScreen.dart';
 import 'package:job_search/view/screens/JSReviewAndSaveScreen.dart';
-import 'package:job_search/view/screens/JSSearchResultScreen.dart';
+import 'package:job_search/view/screens/home/JSSearchResultScreen.dart';
 import 'package:job_search/view/screens/JSSettingScreen.dart';
 import 'package:job_search/core/utils/JSImage.dart';
 

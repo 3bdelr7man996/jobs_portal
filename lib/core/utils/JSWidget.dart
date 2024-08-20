@@ -95,9 +95,9 @@ PreferredSizeWidget jsAppBar(BuildContext context,
                   JPImages.jpLogo,
                   height: 30,
                   width: 80,
-                  fit: BoxFit.cover,
-                  color:
-                      appStore.isDarkModeOn ? white : JPColors.js_primaryColor,
+                  fit: BoxFit.contain,
+                  // color:
+                  //     appStore.isDarkModeOn ? white : JPColors.js_primaryColor,
                 ).paddingOnly(left: 8),
                 Row(
                   children: [
@@ -228,16 +228,19 @@ Widget placeHolderWidget(
       .cornerRadiusWithClipRRect(radius ?? defaultRadius);
 }
 
-Widget filteredWidget({Widget? widget}) {
-  return Container(
-    child: widget,
-    decoration: boxDecorationWithRoundedCorners(
-      borderRadius: BorderRadius.circular(8),
-      backgroundColor: appStore.isDarkModeOn
-          ? scaffoldDarkColor
-          : JPColors.js_backGroundColor,
+Widget filteredWidget({Widget? widget, void Function()? onTap}) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+      child: widget,
+      decoration: boxDecorationWithRoundedCorners(
+        borderRadius: BorderRadius.circular(8),
+        backgroundColor: appStore.isDarkModeOn
+            ? scaffoldDarkColor
+            : JPColors.js_backGroundColor,
+      ),
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
     ),
-    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
   );
 }
 
