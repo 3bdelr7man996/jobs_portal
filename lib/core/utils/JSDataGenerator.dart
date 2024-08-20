@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:job_search/data/model/JSPopularCompanyModel.dart';
 import 'package:job_search/view/screens/JSJobCompanies.dart';
 import 'package:job_search/view/screens/JSJobSearchScreen.dart';
-import 'package:job_search/view/screens/JSProfileScreen.dart';
+import 'package:job_search/view/screens/profile/JSProfileScreen.dart';
 import 'package:job_search/view/screens/JSReviewAndSaveScreen.dart';
 import 'package:job_search/view/screens/JSSearchResultScreen.dart';
 import 'package:job_search/view/screens/JSSettingScreen.dart';

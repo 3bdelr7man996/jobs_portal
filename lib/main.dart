@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:job_search/view/screens/home/JSHomeScreen.dart';
+import 'package:job_search/view/screens/profile/JSProfileScreen.dart';
 import 'package:job_search/view/screens/splash/JSSplashScreen.dart';
 import 'package:job_search/store/AppStore.dart';
 import 'package:job_search/core/utils/AppTheme.dart';
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         theme: AppThemeData.lightTheme,
         darkTheme: AppThemeData.darkTheme,
         themeMode: appStore.isDarkModeOn ? ThemeMode.dark : ThemeMode.light,
-        home: JSSplashScreen(),
+        home: JSProfileScreen(),
         // supportedLocales: LanguageDataModel.languageLocales(),
 /*        localizationsDelegates: [
           AppLocalizations(),

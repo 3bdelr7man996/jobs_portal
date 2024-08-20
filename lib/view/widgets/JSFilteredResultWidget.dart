@@ -3,7 +3,7 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:job_search/view/components/JSJobDetailComponent.dart';
 import 'package:job_search/view/components/JSRemoveJobComponent.dart';
 import 'package:job_search/data/model/JSPopularCompanyModel.dart';
-import 'package:job_search/view/screens/JSHomeScreen.dart';
+import 'package:job_search/view/screens/home/JSHomeScreen.dart';
 import 'package:job_search/core/utils/JSColors.dart';
 import 'package:job_search/core/utils/JSDataGenerator.dart';
 import 'package:job_search/main.dart';
