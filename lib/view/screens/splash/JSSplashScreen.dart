@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:job_search/core/utils/JSAppString.dart';
 import 'package:job_search/provider/home_provider.dart';
+import 'package:job_search/provider/profile_provider.dart';
 import 'package:job_search/view/screens/home/JSJobSearchScreen.dart';
 import 'package:job_search/view/screens/auth/JOSignInScreen.dart';
 import 'package:job_search/view/widgets/splash/splash_body.dart';
@@ -25,6 +26,7 @@ class _JSSplashScreenState extends State<JSSplashScreen> {
     setStatusBarColor(Colors.transparent);
     await context.read<HomeProvider>().fetchAppConfigurations();
     await initialize();
+    await context.read<ProfileProvider>().fetchProfile();
     await 2.seconds.delay;
     finish(context);
     if (getStringAsync(AppStrings.userToken).isEmpty) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job_search/provider/home_provider.dart';
 import 'package:job_search/view/widgets/home/job_search/career_levels_filter.dart';
 import 'package:job_search/view/widgets/home/job_search/country_filter.dart';
 import 'package:job_search/view/widgets/home/job_search/functional_area.dart';
@@ -8,6 +9,7 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:job_search/view/components/JSFilteredResultsComponent.dart';
 import 'package:job_search/view/screens/home/JSFilteredScreen.dart';
 import 'package:job_search/core/utils/JSWidget.dart';
+import 'package:provider/provider.dart';
 
 class JSSearchResultScreen extends StatefulWidget {
   final String? jobTitle;
@@ -130,7 +132,9 @@ class _JSSearchResultScreenState extends State<JSSearchResultScreen> {
           4.height,
           Row(
             children: [
-              Text("page 1 of 545 jobs", style: secondaryTextStyle()),
+              Text(
+                  "page 1 of ${context.read<HomeProvider>().jobList.length} jobs",
+                  style: secondaryTextStyle()),
               4.width,
               Icon(Icons.help, color: gray.withOpacity(0.5), size: 18),
             ],

@@ -1,7 +1,14 @@
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:job_search/core/utils/JSAppString.dart';
 import 'package:job_search/data/model/app_configurations_model.dart';
+import 'package:job_search/data/model/job_details_model.dart';
 import 'package:job_search/data/model/search_job_model.dart';
 import 'package:job_search/data/repositories/home_repo.dart';
+import 'package:job_search/view/screens/auth/JOSignInScreen.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 class HomeProvider with ChangeNotifier {
   final HomeRepository repository;
@@ -80,14 +87,28 @@ class HomeProvider with ChangeNotifier {
     selectedGender = null;
   }
 
+  void resetSearch() {
+    query = '';
+    salaryFrom = null;
+    salaryTo = null;
+    selectedGender = null;
+    selectedCarrerLevel = [];
+    selectedCountries = [];
+    selectedExperience = [];
+    selectedFunctions = [];
+    selectedIndustries = [];
+  }
+
   bool searchLoading = false;
   Jobs? fetchedJobs;
-  List<Data> jobList = [];
+  List<SearchData> jobList = [];
 
   Future<void> searchJob() async {
     try {
       searchLoading = true;
-      notifyListeners();
+      Future.delayed(Duration.zero, () {
+        notifyListeners();
+      });
 
       Map<String, String?> queryParameter = {
         "search": query,
@@ -118,15 +139,97 @@ class HomeProvider with ChangeNotifier {
       }
       debugPrint("Search body : $queryParameter");
       fetchedJobs = await repository.searchJob(queryParameter);
+      await cacheSearchResult();
       jobList = [];
       jobList.addAll(fetchedJobs?.data ?? []);
       debugPrint("Job List length ${jobList.length}");
       searchLoading = false;
-      notifyListeners();
+      Future.delayed(Duration.zero, () {
+        notifyListeners();
+      });
     } catch (e) {
       debugPrint(e.toString());
       searchLoading = false;
       notifyListeners();
+    }
+  }
+
+  Future<void> cacheSearchResult() async {
+    if (query.isNotEmpty && fetchedJobs != null) {
+      await removeKey(AppStrings.shprefSearch);
+      await setValue(
+          AppStrings.shprefSearch,
+          jsonEncode(
+            fetchedJobs?.toJson(),
+          ));
+    }
+  }
+
+  List<SearchData> localJobList = [];
+  Future<void> getLocalSearchJob() async {
+    try {
+      String localData = getStringAsync(AppStrings.shprefSearch);
+      localJobList = Jobs.fromJson(jsonDecode(localData)).data ?? [];
+      Future.delayed(Duration.zero, () {
+        notifyListeners();
+      });
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
+
+  //?============================[ JOB DETAILS ]================================
+  Job? jobDetails;
+  bool detailsLoad = false;
+
+  Future<void> fetchJobDetails(String slug) async {
+    try {
+      detailsLoad = true;
+      Future.delayed(Duration.zero, () {
+        notifyListeners();
+      });
+      jobDetails = await repository.fetchJobDetails(slug);
+      detailsLoad = false;
+      Future.delayed(Duration.zero, () {
+        notifyListeners();
+      });
+    } catch (e) {
+      jobDetails = null;
+      debugPrint(e.toString());
+      detailsLoad = false;
+      Future.delayed(Duration.zero, () {
+        notifyListeners();
+      });
+    }
+  }
+
+  bool applyLoader = false;
+  Future<void> applyJob(BuildContext context, String slug) async {
+    try {
+      if (getStringAsync(AppStrings.userToken).isEmpty) {
+        toast("You must be logged in.");
+        finish(context);
+        JOSignInScreen().launch(context);
+        return;
+      }
+      applyLoader = true;
+      Future.delayed(Duration.zero, () {
+        notifyListeners();
+      });
+      await repository.applyJob(slug);
+      toast("Success Applied", length: Toast.LENGTH_LONG);
+      applyLoader = false;
+      Future.delayed(Duration.zero, () {
+        notifyListeners();
+      });
+      finish(context);
+    } catch (e) {
+      debugPrint(e.toString());
+      toast("failed Applied");
+      applyLoader = false;
+      Future.delayed(Duration.zero, () {
+        notifyListeners();
+      });
     }
   }
 }

@@ -41,57 +41,56 @@ class _JSCvComponentState extends State<JSCvComponent> {
             ? scaffoldDarkColor
             : JPColors.js_backGroundColor,
       ),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Do you have any of these skills?Check all that apply or add your own in Skill below.",
-              style: boldTextStyle(),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 3,
-            ).paddingAll(8),
-            Divider(color: gray.withOpacity(0.4)),
-            ListView(
-              shrinkWrap: true,
-              padding: EdgeInsets.all(8),
-              physics: NeverScrollableScrollPhysics(),
-              children: skillList
-                  .map(
-                    (skillList) => CheckboxListTile(
-                      title: Text(skillList.companyName.validate(),
-                          style: boldTextStyle()),
-                      value: skillList.isBlocked.validate(),
-                      dense: true,
-                      activeColor: JPColors.js_primaryColor,
-                      controlAffinity: ListTileControlAffinity.leading,
-                      contentPadding: EdgeInsets.all(0),
-                      onChanged: (bool? val) {
-                        setState(() {
-                          skillList.isBlocked = val!;
-                        });
-                      },
-                    ),
-                  )
-                  .toList(),
-            ),
-            24.height,
-            AppButton(
-              color: JPColors.js_textColor,
-              width: context.width(),
-              margin: EdgeInsets.symmetric(horizontal: 8),
-              onTap: () {
-                //JSCompleteProfileFiveScreen().launch(context);
-              },
-              shapeBorder: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40)),
-              child: Text("Save", style: boldTextStyle(color: white)),
-            ),
-            24.height,
-            Text("Dismiss", style: boldTextStyle(color: JPColors.js_textColor))
-                .paddingOnly(left: 16, bottom: 22),
-          ],
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "Coming Soon...",
+            style: boldTextStyle(),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 3,
+          ).paddingAll(8),
+          // Divider(color: gray.withOpacity(0.4)),
+          // ListView(
+          //   shrinkWrap: true,
+          //   padding: EdgeInsets.all(8),
+          //   physics: NeverScrollableScrollPhysics(),
+          //   children: skillList
+          //       .map(
+          //         (skillList) => CheckboxListTile(
+          //           title: Text(skillList.companyName.validate(),
+          //               style: boldTextStyle()),
+          //           value: skillList.isBlocked.validate(),
+          //           dense: true,
+          //           activeColor: JPColors.js_primaryColor,
+          //           controlAffinity: ListTileControlAffinity.leading,
+          //           contentPadding: EdgeInsets.all(0),
+          //           onChanged: (bool? val) {
+          //             setState(() {
+          //               skillList.isBlocked = val!;
+          //             });
+          //           },
+          //         ),
+          //       )
+          //       .toList(),
+          // ),
+          // 24.height,
+          // AppButton(
+          //   color: JPColors.js_textColor,
+          //   width: context.width(),
+          //   margin: EdgeInsets.symmetric(horizontal: 8),
+          //   onTap: () {
+          //     //JSCompleteProfileFiveScreen().launch(context);
+          //   },
+          //   shapeBorder: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(40)),
+          //   child: Text("Save", style: boldTextStyle(color: white)),
+          // ),
+          // 24.height,
+          // Text("Dismiss", style: boldTextStyle(color: JPColors.js_textColor))
+          //     .paddingOnly(left: 16, bottom: 22),
+        ],
       ),
     );
   }

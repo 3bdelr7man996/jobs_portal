@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job_search/provider/home_provider.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:job_search/view/components/JSDrawerScreen.dart';
 import 'package:job_search/view/components/JSFilteredResultsComponent.dart';
@@ -7,6 +8,7 @@ import 'package:job_search/core/utils/JSColors.dart';
 import 'package:job_search/core/utils/JSConstant.dart';
 import 'package:job_search/core/utils/JSWidget.dart';
 import 'package:job_search/main.dart';
+import 'package:provider/provider.dart';
 
 class JSHomeScreen extends StatefulWidget {
   const JSHomeScreen({Key? key}) : super(key: key);
@@ -27,6 +29,9 @@ class _JSHomeScreenState extends State<JSHomeScreen> {
   }
 
   void init() async {
+    context.read<HomeProvider>().resetSearch();
+    await context.read<HomeProvider>().searchJob();
+
     //
   }
 
@@ -67,6 +72,10 @@ class _JSHomeScreenState extends State<JSHomeScreen> {
                   prefixIcon:
                       Icon(Icons.search, color: context.iconColor, size: 20),
                 ),
+                onChanged: (query) {
+                  context.read<HomeProvider>().updateQuery(query);
+                  context.read<HomeProvider>().searchJob();
+                },
               ),
             ),
             Container(

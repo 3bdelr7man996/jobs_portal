@@ -74,7 +74,7 @@ class ApiBaseHelper {
   ///to upload image
   Future<Map<String, dynamic>?> multiPartRequest(
     String url, {
-    required Map<String, String>? body,
+    required Map<String, String?> body,
     required List<File>? files,
     required String fileKey,
     String? newBaseUrl,
@@ -98,8 +98,10 @@ class ApiBaseHelper {
           'Bearer ${getStringAsync(AppStrings.userToken)}';
 
       //init form data eg,name,description,...
-      body?.forEach((key, value) {
-        request.fields[key] = value;
+      body.forEach((key, value) {
+        if (value != null) {
+          request.fields[key] = value;
+        }
       });
       //init file data eg,pdf,img,..
 
@@ -156,6 +158,23 @@ class ApiBaseHelper {
           url: urlRequest.toString(), request: "POST");
     } on SocketException {
       throw FetchDataException('لا يوجد اتصال بالانترنت');
+    }
+    return responseJson;
+  }
+
+  Future<Map<String, dynamic>?> delete(String url,
+      {Object? body, Map<String, String>? headers}) async {
+    Map<String, dynamic>? responseJson;
+    Uri urlRequest = Uri.parse("$baseUrl$url");
+    try {
+      debugPrint(urlRequest.path);
+      final http.Response response = await http.delete(urlRequest,
+          body: jsonEncode(body), headers: headers ?? baseHeaders);
+      // debugPrint(response.toString());
+      responseJson = _returnResponse(response,
+          url: urlRequest.toString(), request: "DELETE");
+    } on SocketException catch (e) {
+      throw FetchDataException(e.message);
     }
     return responseJson;
   }

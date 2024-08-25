@@ -24,7 +24,7 @@ class SearchJobModel {
 
 class Jobs {
   int? currentPage;
-  List<Data>? data;
+  List<SearchData>? data;
   String? firstPageUrl;
   int? from;
   int? lastPage;
@@ -51,9 +51,9 @@ class Jobs {
   Jobs.fromJson(Map<String, dynamic>? json) {
     currentPage = json?['current_page'];
     if (json?['data'] != null) {
-      data = <Data>[];
+      data = <SearchData>[];
       json?['data'].forEach((v) {
-        data!.add(new Data.fromJson(v));
+        data!.add(new SearchData.fromJson(v));
       });
     }
     firstPageUrl = json?['first_page_url'];
@@ -93,7 +93,7 @@ class Jobs {
   }
 }
 
-class Data {
+class SearchData {
   int? id;
   int? companyId;
   String? title;
@@ -120,7 +120,7 @@ class Data {
   String? createdAt;
   String? updatedAt;
 
-  Data(
+  SearchData(
       {this.id,
       this.companyId,
       this.title,
@@ -147,7 +147,7 @@ class Data {
       this.createdAt,
       this.updatedAt});
 
-  Data.fromJson(Map<String, dynamic> json) {
+  SearchData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     companyId = json['company_id'];
     title = json['title'];

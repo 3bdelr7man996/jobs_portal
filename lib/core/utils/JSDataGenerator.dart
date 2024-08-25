@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:job_search/data/model/JSPopularCompanyModel.dart';
 import 'package:job_search/view/screens/JSJobCompanies.dart';
 import 'package:job_search/view/screens/home/JSJobSearchScreen.dart';
-import 'package:job_search/view/screens/JSProfileScreen.dart';
+import 'package:job_search/view/screens/profile/JSProfileScreen.dart';
 import 'package:job_search/view/screens/JSReviewAndSaveScreen.dart';
 import 'package:job_search/view/screens/home/JSSearchResultScreen.dart';
 import 'package:job_search/view/screens/JSSettingScreen.dart';
@@ -66,8 +66,8 @@ List<JSPopularCompanyModel> getDrawerList1() {
       companyName: "Find Jobs", widget: JSJobSearchScreen()));
   drawerList.add(JSPopularCompanyModel(
       companyName: "Company Review", widget: JSReviewAndSaveScreen()));
-  drawerList.add(JSPopularCompanyModel(
-      companyName: "Salary Search", widget: JSSearchResultScreen()));
+  // drawerList.add(JSPopularCompanyModel(
+  //     companyName: "Salary Search", widget: JSSearchResultScreen()));
 
   return drawerList;
 }
@@ -78,14 +78,14 @@ List<JSPopularCompanyModel> getDrawerList2() {
       selectSkill: false, companyName: "Profile", widget: JSProfileScreen()));
   drawerList.add(JSPopularCompanyModel(
       selectSkill: false, companyName: "My Jobs", widget: JSJobCompanies()));
-  drawerList.add(JSPopularCompanyModel(
-      selectSkill: false,
-      companyName: "My Reviews",
-      widget: JSReviewAndSaveScreen()));
-  drawerList.add(
-      JSPopularCompanyModel(selectSkill: false, companyName: "Email Settings"));
-  drawerList.add(JSPopularCompanyModel(
-      selectSkill: false, companyName: "Settings", widget: JSSettingScreen()));
+  // drawerList.add(JSPopularCompanyModel(
+  //     selectSkill: false,
+  //     companyName: "My Reviews",
+  //     widget: JSReviewAndSaveScreen()));
+  // drawerList.add(
+  //     JSPopularCompanyModel(selectSkill: false, companyName: "Email Settings"));
+  // drawerList.add(JSPopularCompanyModel(
+  //     selectSkill: false, companyName: "Settings", widget: JSSettingScreen()));
   drawerList.add(JSPopularCompanyModel(
       selectSkill: true,
       companyName: "Country and Language",

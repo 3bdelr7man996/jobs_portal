@@ -36,6 +36,7 @@ class _JSJobSearchScreenState extends State<JSJobSearchScreen> {
   }
 
   void init() async {
+    context.read<HomeProvider>().resetSearch();
     //
   }
 

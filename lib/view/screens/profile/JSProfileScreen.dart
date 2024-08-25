@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:job_search/provider/home_provider.dart';
+import 'package:job_search/provider/profile_provider.dart';
+import 'package:job_search/view/widgets/profile/about_me_tab.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:job_search/view/components/JSCvComponent.dart';
 import 'package:job_search/view/components/JSDrawerScreen.dart';
-import 'package:job_search/data/model/JSPopularCompanyModel.dart';
 import 'package:job_search/core/utils/JSColors.dart';
-import 'package:job_search/core/utils/JSDataGenerator.dart';
 import 'package:job_search/core/utils/JSWidget.dart';
 import 'package:job_search/main.dart';
+import 'package:provider/provider.dart';
 
 class JSProfileScreen extends StatefulWidget {
-  const JSProfileScreen({Key? key}) : super(key: key);
+  const JSProfileScreen({super.key});
 
   @override
   _JSProfileScreenState createState() => _JSProfileScreenState();
@@ -18,9 +20,12 @@ class JSProfileScreen extends StatefulWidget {
 class _JSProfileScreenState extends State<JSProfileScreen> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
-  List<JSPopularCompanyModel> skillList = getSkillList();
+  // List<JSPopularCompanyModel> skillList = getSkillList();
 
   TabController? controller;
+  final formKey = GlobalKey<FormState>();
+  late ProfileProvider profileProvider;
+  late HomeProvider homeProvider;
 
   @override
   void initState() {
@@ -29,7 +34,12 @@ class _JSProfileScreenState extends State<JSProfileScreen> {
   }
 
   void init() async {
-    //
+    profileProvider = context.read<ProfileProvider>();
+    homeProvider = context.read<HomeProvider>();
+    await context.read<HomeProvider>().fetchAppConfigurations();
+    if (context.mounted) {
+      await context.read<ProfileProvider>().fetchProfile();
+    } //
   }
 
   @override
@@ -39,11 +49,13 @@ class _JSProfileScreenState extends State<JSProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    profileProvider = context.read<ProfileProvider>();
+    homeProvider = context.read<HomeProvider>();
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         key: scaffoldKey,
-        drawer: JSDrawerScreen(),
+        drawer: const JSDrawerScreen(),
         appBar: jsAppBar(context,
             backWidget: true,
             homeAction: true,
@@ -67,7 +79,7 @@ class _JSProfileScreenState extends State<JSProfileScreen> {
                         Border.all(color: JPColors.js_primaryColor, width: 4),
                     backgroundColor: context.scaffoldBackgroundColor,
                   ),
-                  padding: EdgeInsets.all(24),
+                  padding: const EdgeInsets.all(24),
                   child: Text('SJ', style: boldTextStyle(size: 22)),
                 ),
                 16.width,
@@ -77,7 +89,10 @@ class _JSProfileScreenState extends State<JSProfileScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Smit Jhon', style: boldTextStyle(size: 22)),
+                        Expanded(
+                          child: Text(profileProvider.joUser?.name ?? '',
+                              style: boldTextStyle(size: 22)),
+                        ),
                         IconButton(
                             onPressed: () {},
                             icon: Icon(Icons.edit,
@@ -88,7 +103,16 @@ class _JSProfileScreenState extends State<JSProfileScreen> {
                       children: [
                         Icon(Icons.location_on, color: context.iconColor),
                         8.width,
-                        Text('London', style: boldTextStyle()),
+                        if (homeProvider.myConfigurations != null &&
+                            profileProvider.joUser != null &&
+                            homeProvider.myConfigurations?.countries != null &&
+                            profileProvider.joUser?.countryId != null)
+                          Text(
+                              homeProvider.myConfigurations!.countries!
+                                  .firstWhere((e) =>
+                                      e.id == profileProvider.joUser!.countryId)
+                                  .name!,
+                              style: boldTextStyle()),
                       ],
                     ),
                   ],
@@ -100,7 +124,7 @@ class _JSProfileScreenState extends State<JSProfileScreen> {
               unselectedLabelColor: gray,
               isScrollable: false,
               indicatorColor: JPColors.js_primaryColor,
-              tabs: [
+              tabs: const [
                 Tab(
                     child: Text("CV",
                         style: TextStyle(
@@ -114,8 +138,10 @@ class _JSProfileScreenState extends State<JSProfileScreen> {
             ),
             TabBarView(
               children: [
-                JSCvComponent(),
-                JSCvComponent(),
+                const JSCvComponent(),
+                AboutMeTab(
+                  formKey: formKey,
+                ),
               ],
             ).expand(),
           ],

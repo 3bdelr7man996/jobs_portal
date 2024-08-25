@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:job_search/view/screens/JSHomeScreen.dart';
+import 'package:job_search/view/screens/home/JSHomeScreen.dart';
 import 'package:job_search/view/screens/JSNotificationScreen.dart';
 import 'package:job_search/core/utils/JSColors.dart';
 import 'package:job_search/core/utils/JSConstant.dart';
